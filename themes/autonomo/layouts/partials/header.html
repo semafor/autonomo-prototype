@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ .Title }}</title>
+
+  <link href="{{ .Site.BaseURL }}css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="{{ .Site.BaseURL }}css/base.css" rel="stylesheet" type="text/css">
+  <link href="{{ .Site.BaseURL }}css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+    <div class="header">
+        {{ if isset .Params "backbutton" }}
+            <span class="back">⮜</span>
+        {{ end }}
+        <h1>{{ .Title }}</h1>
+        {{ if isset .Params "action" }}
+            <button class="action">{{ .Params.action }}</button>
+        {{ end }}
+    </div>
+
+    <div class="content">
